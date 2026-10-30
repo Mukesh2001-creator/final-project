@@ -52,7 +52,8 @@ final-project/
 | `/figures/` | Figures produced by the scripts. |
 | `tables/` | Tables produced by the scripts. |
 
-The project is stored in a GitHub repository: <https://github.com/Mukesh2001-creator/final-project>
+The report is published at <https://mukesh2001-creator.github.io/final-project/>
+
 
 
 These are the files currently in `data/raw/`:
