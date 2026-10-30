@@ -1,0 +1,116 @@
+---
+title: "Tree Fruit Physiology"
+author: "Mukesh Pant"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Overview
+
+My dataset is from fruit production and physiology. It consists data for various fruit quality measurements. The data were collected on field and laboratory. Both qualitative and quantitative data are collected. There are 100 ovservations and 11 variables are measured.
+
+
+# Research Questions
+
+1. How to analyse qualitative and quantitave data?
+2. How to visualize data using ggplot?
+3. How to reprduce data?
+
+# Rationale
+
+This dataset intrests me because I will be researching on the similar projects which investigates about how different types of pruning practices in fruit trees impacts overall fruit quality and consumer preference. Additionally, I hope to learn how to analyse these qualitative and quantitative data using R and also to visualize the results for doing presentations at various conferences and workshops.
+
+# Project Organization
+
+*Replace the example below with the actual folder structure of your project, then replace the table with a description of each of your folders and files.*
+
+```
+final-project/
+├── data/
+│   ├── .git/
+│   ├── processed/
+│   └── raw/
+│       ├── data.xlsx
+│       ├── measurement.csv
+│       ├── tables.png
+│       └── units.csv
+└── final-project.Rmd
+```
+
+| Folder or file | What it holds |
+|----------------|---------------|
+| `final-project.Rmd` | This report. |
+| `data/raw/` | The original data files, exactly as downloaded. These are never edited. |
+| `data/processed/` | No data yet |
+| `/figures/` | Figures produced by the scripts. |
+| `tables/` | Tables produced by the scripts. |
+
+The project is stored in a GitHub repository: <https://github.com/Mukesh2001-creator/final-project>
+
+
+These are the files currently in `data/raw/`:
+
+```{r raw-file-list}
+raw_files <- list.files("data/raw", full.names = TRUE)
+knitr::kable(data.frame(file = basename(raw_files),
+                        size_kb = round(file.size(raw_files) / 1024, 1)))
+```
+
+## File 1: measurements.csv
+
+
+```{r read-file-1}
+file1 <- read.csv("data/raw/measurement.csv", stringsAsFactors = FALSE, na.strings = "")
+```
+
+This file has `100` rows and `14` columns. Here are the first few rows:
+
+```{r head-file-1}
+knitr::kable(head(file1))
+```
+
+And here is the type of each column, as R reads it:
+
+```{r str-file-1}
+str(file1)
+```
+
+### Data dictionary for file 1
+
+| Variable | Description | Type | Units |
+|----------|-------------|------|-------|
+| `tree_id` | Numbers each trees for which data is taken | whole number  | none|
+| `measurement_id` | Indicates each measurement event | whole number | none|
+
+# Planned Workflow
+
+I plan to clean this data, manipulate it, wrangle it, and analyse these data and plot graphs using ggplot.
+
+## Data cleaning
+
+I haven't seen any cleaning need for my data now, if I need it later, I will post it here.
+
+## Visualization
+
+I aim to make bar charts mainly and some boxplots, heatmaps,regression, PCA graphs as well.
+
+## Analysis
+
+I want to explain how different pruning practices affects quality of the fruits and by what extent.
+
+# References
+
+This data is collected by us for our research and are confidential.
+
+# Session Information
+
+```{r session-info}
+sessionInfo()
+```
